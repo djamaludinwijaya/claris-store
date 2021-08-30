@@ -21,7 +21,7 @@
                     <td><?= $no++ ?></td>
                     <td><?= $brg->nama_brg ?></td>
                     <td><?= $brg->keterangan ?></td>
-                    <td><?= $brg->kategori ?></td>
+                    <td><?= $brg->nama_kategori ?></td>
                     <td><?= number_format($brg->harga, 0, ",", ".") ?></td>
                     <td><?= $brg->stok ?></td>
                     <td>
@@ -41,7 +41,7 @@
 
 
 
-<!-- Modal Tambah Barang --> -->
+<!-- Modal Tambah Barang -->
 <div class="modal fade" id="tambah_barang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -66,12 +66,10 @@
 
                     <div class="form-group">
                         <label for="">Kategori</label>
-                        <select name="" id="" class="form-control" name="kategori">
-                            <option value="elektronik">Elektronik</option>
-                            <option value="pakaian pria">Pakaian Pria</option>
-                            <option value="pakaian wanita">Pakaian Wanita</option>
-                            <option value="pakaian anak anak">Pakaian Anak-anak</option>
-                            <option value="pelaratan olahraga">Peralatan Olahraga</option>
+                        <select name="kategori" class="form-control">
+                            <?php foreach ($kategori as $kt) : ?>
+                                <option value="<?= $kt->id_kategori; ?>"><?= $kt->nama_kategori; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
 

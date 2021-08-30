@@ -19,6 +19,7 @@ class Data_barang extends CI_Controller
     public function index()
     {
         $data['barang'] = $this->model_barang->tampil_data()->result();
+        $data['kategori'] = $this->model_kategori->tampil_data()->result();
         $this->load->view("templates/header");
         $this->load->view('admin/sidebar');
         $this->load->view('admin/data_barang', $data);
@@ -27,6 +28,7 @@ class Data_barang extends CI_Controller
 
     public function tambah_aksi()
     {
+        $kategori = $this->input->post('kategori');
         $nama_brg = $this->input->post('nama_brg');
         $keterangan = $this->input->post('keterangan');
         $kategori = $this->input->post('kategori');
@@ -48,16 +50,16 @@ class Data_barang extends CI_Controller
             }
         }
         $data = [
+            'id_kategori'   => $kategori,
             'nama_brg'      => $nama_brg,
             'keterangan'   =>  $keterangan,
-            'kategori'     =>  $kategori,
             'harga'        => $harga,
             'stok'         => $stok,
             'gambar'    => $gambar
         ];
 
         $this->model_barang->tambah_barang($data, 'tb_barang');
-        redirect('admin/data_barang/index');
+        redirect('admin/data_barang');
     }
 
     public function edit($id)

@@ -3,7 +3,16 @@ class Model_barang extends CI_Model
 {
     public function tampil_data()
     {
-        return $this->db->get('tb_barang');
+        $this->db->select('*');
+        $this->db->from('tb_barang');
+        $this->db->join('tb_kategori', 'tb_barang.id_kategori = tb_kategori.id_kategori');
+        $result = $this->db->get();
+        return $result;
+    }
+
+    public function tampil_per_id($id, $table)
+    {
+        return $this->db->get_where($table, ['id_kategori' => $id]);
     }
 
     public function tambah_barang($data, $table)

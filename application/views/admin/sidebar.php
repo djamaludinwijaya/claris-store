@@ -34,6 +34,12 @@
                     <span>Data Barang</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url("admin/data_kategori") ?>">
+                    <i class="fas fa-fw fa-list-alt"></i>
+                    <span>Data Kategori</span></a>
+            </li>
+
 
             <!-- Nav Item - Pakaian Pria -->
             <li class="nav-item">

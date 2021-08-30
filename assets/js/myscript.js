@@ -1,8 +1,8 @@
-$(document).on("click", ".modal_detail_barang", function () {
+// untuk edit kategori
+$(document).on("click", ".modal_edit_kategori", function () {
     let id = $(this).data('id')
-
     $.ajax({
-        url: "http://localhost/toko_online/admin/data_barang/detail",
+        url: "http://localhost/claris_store/admin/data_kategori/edit",
         data: {
             id: id
         },
@@ -10,12 +10,8 @@ $(document).on("click", ".modal_detail_barang", function () {
         dataType: "json",
         success: function (data) {
             console.log(data)
-            $("#modal_detail_gambar").attr('src', "http://localhost/toko_online/uploads/" + data.gambar).fadeIn()
-            $("#modal_detail_nama").html(data.nama_brg)
-            $("#modal_detail_keterangan").html(data.keterangan)
-            $("#modal_detail_kategori").html(data.kategori)
-            $("#modal_detail_stok").html(data.stok)
-            $("#modal_detail_harga").html(data.harga)
+            $("#nama_kategori").val(data.nama_kategori).text(data.nama_kategori)
+            $("#id_kategori").val(data.id_kategori).text(data.nama_kategori)
         }
     })
 })

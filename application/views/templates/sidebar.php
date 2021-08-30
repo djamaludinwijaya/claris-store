@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?= base_url('dashboard') ?>">
+                <a class="nav-link" href="<?= base_url('welcome') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -35,40 +35,41 @@
 
 
             <!-- Nav Item - Elektronik -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('kategori/elektronik') ?>">
-                    <i class="fas fa-fw fa-tv"></i>
-                    <span>Elektronik</span></a>
-            </li>
+            <?php foreach ($kategori as $kt) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('welcome/tampil_kategori/') . $kt->id_kategori ?>">
+                        <span><?= $kt->nama_kategori; ?></span></a>
+                </li>
+            <?php endforeach; ?>
 
 
             <!-- Nav Item - Pakaian Pria -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('kategori/pakaian_pria') ?>">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Pakaian Pria</span></a>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Pakaian Wanita -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('kategori/pakaian_wanita') ?>">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Pakaian Wanita</span></a>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Pakaian Anak-anak -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('kategori/pakaian_anak_anak') ?>">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Pakaian Anak-anak</span></a>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Perlatan Olahraga -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('kategori/peralatan_olahraga') ?>">
                     <i class="fas fa-fw fa-futbol"></i>
                     <span>Peralatan Olahraga</span></a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
