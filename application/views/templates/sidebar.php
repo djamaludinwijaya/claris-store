@@ -32,8 +32,6 @@
                 KATEGORI
             </div>
 
-
-
             <!-- Nav Item - Elektronik -->
             <?php foreach ($kategori as $kt) : ?>
                 <li class="nav-item">

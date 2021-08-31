@@ -27,10 +27,16 @@
     </div>
 
 
-    <div class="row text-center mt-4">
+    <div class="row text-center mt-4 mb-5">
         <?php foreach ($barang as $brg) : ?>
             <div class="col-sm-3">
                 <div class="card h-100 mb-3" style="width: 15rem;">
+                    <div class="card-header test">
+                        <span class="float-left"><?= $brg->nama_kategori; ?></span>
+
+                        <a tabindex="0" id="testpopover" class="btn btn-sm btn-default float-right" role="button" data-toggle="popover" data-trigger="focus" title="<?= $brg->nama_kategori ?>" data-content="<?= $brg->keterangan ?>">Info Produk</a>
+
+                    </div>
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="<?= base_url("uploads/") . $brg->gambar ?>" class="card-img-top embed-responsive-item">
                     </div>
@@ -47,4 +53,6 @@
 
 
     </div>
+
+
 </div>

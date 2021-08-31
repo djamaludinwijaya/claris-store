@@ -15,3 +15,7 @@ $(document).on("click", ".modal_edit_kategori", function () {
         }
     })
 })
+
+$(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+});
